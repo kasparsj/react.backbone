@@ -2,7 +2,7 @@
 jest.autoMockOff();
 
 describe('react.backbone', function() {
-  var TestUtils = require('react-addons-test-utils');
+  var TestUtils = require('react-dom/test-utils');
   var Backbone = require('backbone');
   var React = require('../react.backbone.js');
   var ReactDOM = require('react-dom');

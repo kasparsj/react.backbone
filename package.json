@@ -22,14 +22,13 @@
   "devDependencies": {
     "backbone": "1.x.x",
     "jest-cli": "~0.8.2",
-    "react": "^15.0.0",
-    "react-addons-test-utils": "^15.0.0",
-    "react-dom": "^15.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-tools": "0.13.x"
   },
   "peerDependencies": {
-    "react": "^15.0.0",
     "backbone": "1.x.x",
+    "react": "^16.8.6",
     "underscore": ">=1.2.x"
   },
   "jest": {
@@ -38,5 +37,8 @@
       "node_modules/react-dom"
     ],
     "scriptPreprocessor": "preprocessor.js"
+  },
+  "dependencies": {
+    "create-react-class": "^15.6.3"
   }
 }

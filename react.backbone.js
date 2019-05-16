@@ -1,15 +1,20 @@
 (function(root, factory) {
     if (typeof exports === 'object') {
         // CommonJS
-        module.exports = factory(require('backbone'), require('react'), require('underscore'));
+        module.exports = factory(
+            require('backbone'),
+            require('react'),
+            require('underscore'),
+            require('create-react-class')
+        );
     } else if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(['backbone', 'react', 'underscore'], factory);
+        define(['backbone', 'react', 'underscore', 'create-react-class'], factory);
     } else {
         // Browser globals
-        root.amdWeb = factory(root.Backbone, root.React, root._);
+        root.amdWeb = factory(root.Backbone, root.React, root._, root.createReactClass);
     }
-}(this, function(Backbone, React,  _) {
+}(this, function(Backbone, React,  _, createReactClass) {
 
     'use strict';
 
@@ -137,7 +142,7 @@
             React.BackboneViewMixin
         ]);
 
-        return React.createClass(spec);
+        return createReactClass(spec);
     };
 
     return React;
