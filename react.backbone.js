@@ -79,24 +79,14 @@
             subscribe(this, modelOrCollection(this.props), customChangeOptions);
         },
 
-        componentWillReceiveProps: function(nextProps) {
-            if (modelOrCollection(this.props) === modelOrCollection(nextProps)) {
-                return;
-            }
-
-            unsubscribe(this, modelOrCollection(this.props));
-            subscribe(this, modelOrCollection(nextProps), customChangeOptions);
-
-            if (typeof this.componentWillChangeModel === 'function') {
-                this.componentWillChangeModel();
-            }
-        },
-
         componentDidUpdate: function(prevProps, prevState) {
             if (modelOrCollection(this.props) === modelOrCollection(prevProps)) {
                 return;
             }
-
+            
+            unsubscribe(this, modelOrCollection(prevProps));
+            subscribe(this, modelOrCollection(this.props), customChangeOptions);
+            
             if (typeof this.componentDidChangeModel === 'function') {
                 this.componentDidChangeModel();
             }
